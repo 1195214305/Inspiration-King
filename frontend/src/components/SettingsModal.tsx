@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
 interface SettingsModalProps {
   isOpen: boolean
@@ -8,9 +8,9 @@ interface SettingsModalProps {
 }
 
 const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, apiKey, onSaveApiKey }) => {
-  const [tempKey, setTempKey] = React.useState(apiKey)
+  const [tempKey, setTempKey] = useState(apiKey)
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTempKey(apiKey)
   }, [apiKey])
 
